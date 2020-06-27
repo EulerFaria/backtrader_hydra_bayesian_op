@@ -91,7 +91,9 @@ def bayesian_optimization(data,cfg):
         _strategy = SmaCross 
 
     elif cfg.strategy.name =='ichimoku':
-        print('bla')
+        # Implement your strateg in a separated file and then add
+        # the option here 
+        pass
 
     logger.info(f"Search space for optmization: {params}")
     
@@ -102,9 +104,11 @@ def bayesian_optimization(data,cfg):
         pbounds=params,
         random_state=1,
     )
-
+    # The init_points and n_iter were randonmly chosen just for demonstration purposes
+    # you should adjust it according with your needs. 
+    # checkout the documentation (https://github.com/fmfn/BayesianOptimization)
     optimizer.maximize(
-        init_points=3,
+        init_points=3, 
         n_iter=6,
     )
 
