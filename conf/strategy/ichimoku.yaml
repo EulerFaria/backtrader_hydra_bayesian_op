@@ -1,0 +1,8 @@
+strategy:
+    name: ichimoku
+    atrperiod:  [12,52]        # ATR Period (standard)
+    atr_k_sell: [0.2,1.5]      # Percentage of ATR for stake calculation
+    atr_k_buy:  [0.2,1.5]      # Risk percentage
+    atr_k_filter: [0.2,1.5]    # Filter to avoid false signal 
+    preserve_mode: [0.2,1.5]   # Constant for preserve mode calculation
+        

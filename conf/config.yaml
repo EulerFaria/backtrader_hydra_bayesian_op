@@ -1,0 +1,12 @@
+defaults:
+    - grain: daily
+    - stock: bbdc
+    - strategy: ichimoku
+ 
+
+    
+  
+  
+  
+  
+  
