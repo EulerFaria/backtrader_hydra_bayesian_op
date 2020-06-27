@@ -121,7 +121,7 @@ def bayesian_optimization(data,cfg):
 
     res = {**optimizer.max,**{"strategy":stg_name}}
     
-    # Saving bokeh htm of best iteration
+    # Saving bokeh html of best iteration
     save_plot(**optimizer.max['params'])
 
     return res
