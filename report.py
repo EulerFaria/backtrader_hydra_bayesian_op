@@ -4,8 +4,8 @@ import pandas as pd
 _file_path = os.path.dirname(os.path.abspath(__file__))
 
 def generate_report(dct,cfg):
-
-    if os.path.exists(_file_path +"results.csv"):
+    
+    if os.path.exists(_file_path +"/results.csv"):
         current_csv =pd.read_csv(_file_path +"/results.csv")
     
         tmp= pd.DataFrame({"stock":[cfg.stock.name],
