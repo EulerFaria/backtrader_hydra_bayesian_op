@@ -4,9 +4,9 @@
 
 # Description
 
-This repository contains a framework for optimiziging the possible parameters of a given trading strategy using Bayesian optimization.
+This repository contains a framework for optimizing the possible parameters of a given trading strategy using Bayesian optimization.
 
-It was used mainly three libraries:
+It was used mainly four libraries:
 
 - [backtrader](https://www.backtrader.com/): A feature-rich Python framework for backtesting and trading; 
 
@@ -21,14 +21,8 @@ The `SMACross` strategy was taken from backtrader examples documentation and sli
 
 # Features
 
-This framework produces a series of metadata during the optimization process, which is saved in the directories created automatically by Hydra. These metada includes: a `best_iteration.html` file showing the Bokeh plot of backtrader_plotting, a `main.log` file describing step by step of the optimization process, and a `STRATEGY_NAME.json` file containing the best set of parameters found by Bayesian optimization. After an experiment is concluded the main results are compiled and added to a `results.csv` file to easily keep tracking of all possibilities that were tryed. 
+This framework produces a series of metadata during the optimization process, which is saved in the directories created automatically by Hydra. This metada includes a `best_iteration.html` file showing the Bokeh plot of backtrader_plotting, a `main.log` file describing step by step of the optimization process, and a `STRATEGY_NAME.json` file containing the best set of parameters found by Bayesian optimization. After an experiment is concluded the main results are compiled and added to a `results.csv` file to easily keep tracking of all possibilities that were tried. 
 
-- Reproducibility of experiments;
-- Config management;
-- Basic Logging;
-- Simple and effective Performance Report;
-- Parameters optimization through Bayesian Optimization;
-- Interactive graphs using backtrader_plotting with Bokeh
 
 # Environment configuration
 
@@ -81,8 +75,7 @@ The important part is the concepts behind the framework, you can take the main i
 
 # Next Steps
 
-- Implementing walking forward analysis;
-
+- Implementing [walking forward optmization](https://en.wikipedia.org/wiki/Walk_forward_optimization);
 
 
 Every feedback is welcomed.
