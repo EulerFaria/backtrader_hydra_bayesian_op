@@ -1,7 +1,7 @@
 defaults:
     - grain: daily
-    - stock: bbdc
-    - strategy: ichimoku
+    - stock: vale
+    - strategy: sma
  
 
     

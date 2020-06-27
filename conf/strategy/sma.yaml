@@ -1,0 +1,8 @@
+strategy:
+    name: sma
+    pfast:  [5,20]      # period for the fast moving average data0
+    pslow: [30,50]     # period for the slow moving average data0
+    pfast_d1:  [5,20] # period for the fast moving average data1
+    pslow_d1: [30,50]  # period for the slow moving average data1
+    
+        
