@@ -1,15 +1,14 @@
 import backtrader as bt
 import datetime
-import os 
 import json
-import pandas as pd
-from ichimoku import IchimokuStrategy
-#from sma import SMA
-from omegaconf import OmegaConf
+import logging 
+import os
+
 from bayes_opt import BayesianOptimization
 from backtrader_plotting.schemes import Tradimo
 from backtrader_plotting import Bokeh
-import logging
+from omegaconf import OmegaConf
+from sma import SmaCross
 
 
 logger = logging.getLogger(__name__)
@@ -28,10 +27,10 @@ def run_strat(**kwargs):
     # Instantiate Cerebro
     cerebro = bt.Cerebro()
 
-    #Add data original timestamp 
+    # Add data original timestamp 
     cerebro.adddata(_data)
     
-    #Upsampling
+    # Upsampling in case of need just uncomment the next line 
     cerebro.replaydata(_data,timeframe=tframes[_replay_period])    
 
     # Add strateg 
@@ -52,10 +51,10 @@ def save_plot(**kwargs):
     # Instantiate Cerebro
     cerebro = bt.Cerebro()
 
-    #Add data original timestamp 
+    # Add data original timestamp 
     cerebro.adddata(_data)
     
-    #Upsampling
+    # Upsampling in case of need just uncomment the next line 
     cerebro.replaydata(_data,timeframe=tframes[_replay_period])   
 
     # Add strateg 
@@ -87,11 +86,11 @@ def bayesian_optimization(data,cfg):
 
     stg_name=cfg.strategy.pop('name', None)
     
-    if stg_name == 'ichimoku':        
+    if stg_name == 'sma':        
         params = OmegaConf.to_container(cfg.strategy,resolve=True) 
-        _strategy = IchimokuStrategy 
+        _strategy = SmaCross 
 
-    elif cfg.strategy.name =='sma':
+    elif cfg.strategy.name =='ichimoku':
         print('bla')
 
     logger.info(f"Search space for optmization: {params}")
