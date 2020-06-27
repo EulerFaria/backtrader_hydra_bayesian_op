@@ -21,6 +21,8 @@ The `SMACross` strategy was taken from backtrader examples documentation and sli
 
 # Features
 
+This framework produces a series of metadata during the optimization process, which is saved in the directories created automatically by Hydra. These metada includes: a `best_iteration.html` file showing the Bokeh plot of backtrader_plotting, a `main.log` file describing step by step of the optimization process, and a `STRATEGY_NAME.json` file containing the best set of parameters found by Bayesian optimization. After an experiment is concluded the main results are compiled and added to a `results.csv` file to easily keep tracking of all possibilities that were tryed. 
+
 - Reproducibility of experiments;
 - Config management;
 - Basic Logging;
@@ -80,6 +82,7 @@ The important part is the concepts behind the framework, you can take the main i
 # Next Steps
 
 - Implementing walking forward analysis;
+
 
 
 Every feedback is welcomed.
